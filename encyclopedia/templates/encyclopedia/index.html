@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+    <h1> Welcome to Ukrpedia!</h1>
+
+    <p>Ласкаво просимо до Вікіпедії,
+вільної енциклопедії, яку може редагувати кожен.
+
+Українська Вікіпедія заснована 30 січня 2004 року.</p>
+
+    <h2>All Pages:</h2>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href="{% url 'entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
